@@ -1,5 +1,5 @@
 # NavSuite
-http://nav-suite.azurewebsites.net
+https://nav-suite.azurewebsites.net
 
 
 ## File Structure
