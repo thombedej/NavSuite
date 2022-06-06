@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  reverse-proxy:
+    image: thombedej/ns-nginx
+    build: ./ns-nginx
+    container_name: ns-nginx
+    depends_on:
+      - web-service
+      - server-service
+      # - postgres-service
+    logging:
+      driver: none
+    ports:
+      - 80:80
+
+  web-service:
+    build: ./ns-frontend
+    image: thombedej/ns-app
+    container_name: ns-app
+    # volumes:
+    #   - ./ns-frontend:/usr/src/app
+    depends_on:
+      - server-service
+    ports:
+      - 3000:80
+    restart: on-failure
+
+  server-service:
+    build: ./ns-server
+    image: thombedej/ns-server
+    container_name: ns-server
+    # volumes:
+    #   - ./NS-server:/usr/src/server
+    # depends_on:
+      # - postgres-service
+    ports:
+      - 3001:3001
+    restart: on-failure
+
+  # postgres-service:
+  #   image: thombedej/ns-database
+  #   build: ./ns-database
+  #   container_name: ns-database
+  #   restart: always
+  #   # volumes:
+  #   #   - initmount:/var/lib/postgresql/data/
+  #   ports:
+  #     - 5432:5432
+
+# volumes:
+#   initmount:
+#     driver: azure_file
