@@ -1,0 +1,20 @@
+$theme-colors: (
+  // "danger": #e7154e,
+  "danger": #80183b,
+  "primary": #1d1d26,
+  "secondary": #3f81eb,
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+  "light": #636378,
+  "dark": #292936
+);
+
+// $body-bg: #f5f5fc;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import '/node_modules/react-grid-layout/css/styles.css';
+@import '/node_modules/react-resizable/css/styles.css';
