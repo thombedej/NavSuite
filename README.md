@@ -1,4 +1,6 @@
 # NavSuite
+http://nav-suite.azurewebsites.net
+
 
 ## File Structure
 ### ns-frontend
